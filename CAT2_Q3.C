@@ -8,30 +8,27 @@ DES file handling
 
 */
 
-include<stdio.h>
-
-
-
+#include<stdio.h>
 
 void writeintegerstoFile()
 
 {
 
-FILE * file=fopen("input .txt","w");
+FILE * file=fopen("input.txt","w");
 
 if (file == NULL)
 
 {
 
-printf ("Error: could not open input.txt for writting.\n");
+printf ("Error: could not open input.txt for writing.\n");
 
 return;
 
 }
 
-printf("Please enter 10 integers \n")
+printf("Please enter 10 integers \n");
 
-for int(i=0; i<10; i++)
+for (int i = 0; i < 10; i++)
 
 {
 
@@ -41,7 +38,7 @@ printf("integer %d", i+1);
 
 scanf("%d",&num) ;
 
-fprintf(file "%d"\n",num);
+fprintf(file,"%d\n",num);
 
 }
 
@@ -69,7 +66,7 @@ if (outputfile == NULL)
 
 {
 
-printf("Error:couldnot open outputfile.txt for writting.\n");
+printf("Error:couldnot open outputfile.txt for writing.\n");
 
 fclose(inputfile);
 
@@ -79,9 +76,7 @@ return;
 
 int num, sum =0, count=0;
 
-while(fscanf(inputfile, "%d", &num)==1
-
-{
+while(fscanf(inputfile, "%d", &num)==1){
 sum+=num;
 
 count ++;
@@ -94,9 +89,9 @@ if(count>0)
 
 float average = (float)sum/count;
 
-fprintf(outputfile, "sum%d\n",sum);
+fprintf(outputfile, "Sum:%d\n",sum);
 
-fprintf (outputfile,"average%.2f",average);
+fprintf (outputfile,"Average:%.2f",average);
 
 }
 
@@ -112,7 +107,7 @@ fclose(inputfile);
 
 fclose(outputfile);
 
-printf("sum and average has been written to output.txt\n");
+printf("Sum and average has been written to output.txt\n");
 
 }
 
@@ -138,9 +133,9 @@ else
 
 {
 
-printf("\n--- content frim input.txt---\n");
+printf("\n--- content from input.txt---\n");
 
-while((ch = fgetc(inputfile)) ! =E0F)
+while((ch = fgetc(inputfile)) != EOF)
 
 {
 
@@ -152,21 +147,19 @@ fclose(inputfile);
 
 }
 
-if(outputfile == NULL)
-
-{ 
-
-printf("\nError could not open output.txt for reading")
-
+if (outputfile == NULL)
+{
+    printf("\nError: could not open output.txt for reading.\n");
 }
+
 
 else
 
 {
 
-printf("\n---contents for output.txt---\n")
+printf("\n---contents for output.txt---\n");
 
-while ((ch = fgetc(outputfile)) !=E0F)
+while ((ch = fgetc(outputfile)) !=EOF)
 
 {
 
@@ -184,7 +177,7 @@ int main()
 
 {
 
-writeintegerstofile();
+writeintegerstoFile();
 
 processfile();
 
@@ -193,16 +186,4 @@ displayfiles();
 return 0;
 
 }
-
-}  
-
-
-
-
-
-
-
-
-
-
 
