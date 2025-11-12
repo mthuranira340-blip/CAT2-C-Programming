@@ -35,7 +35,8 @@ float regular_pay = 40 * hourly_wage;
 
 float overtime_hours = hours_worked - 40;
 
-float overtime_pay = overtime_hours * hourly_wage * 1.5;
+float overtime_pay = overtime_hours * hourly_wage * 1.5;
+
 
 gross_pay = regular_pay + overtime_pay;
 
@@ -70,4 +71,5 @@ printf("net pay%.2f\n",net_pay);
 return 0;
 
 }
+
 
